@@ -1,5 +1,9 @@
+require "chchlog/issue"
 require "chchlog/version"
 
 module Chchlog
-  # Your code goes here...
+  # TODO: It's just a dummy method!
+  def self.hello
+    'Hello!'
+  end
 end
