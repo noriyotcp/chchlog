@@ -4,7 +4,7 @@ RSpec.describe Chchlog::Issue do
   # pr_num = %x( \git log --merges --oneline --reverse --ancestry-path #{hash}...HEAD | grep 'Merge pull request #' | grep -oE '#[[:digit:]]+' | head -n1 | cut -b 2- )
   # pull_url = %x( git remote get-url --push origin ).strip.gsub(/(.git)/, "/pulls/")
 
-  # TODO: It's just dummies!
+  # TODO: These are just dummies!
   pr_num = 1
   pull_url = "https://github.com/UteroOS/utero/pulls/#{pr_num}"
 
