@@ -1,7 +1,6 @@
 require "spec_helper"
 
 RSpec.describe Chchlog::Issue do
-  include Chchlog::Issue
   # pr_num = %x( \git log --merges --oneline --reverse --ancestry-path #{hash}...HEAD | grep 'Merge pull request #' | grep -oE '#[[:digit:]]+' | head -n1 | cut -b 2- )
   # pull_url = %x( git remote get-url --push origin ).strip.gsub(/(.git)/, "/pulls/")
 
