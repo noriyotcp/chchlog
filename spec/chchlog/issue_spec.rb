@@ -2,6 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Chchlog::Issue do
   # pr_num = %x( \git log --merges --oneline --reverse --ancestry-path #{hash}...HEAD | grep 'Merge pull request #' | grep -oE '#[[:digit:]]+' | head -n1 | cut -b 2- )
+  # Fix: Review the following line to support git ssh url
   # pull_url = %x( git remote get-url --push origin ).strip.gsub(/(.git)/, "/pulls/")
 
   # http://stackoverflow.com/questions/1542945/testing-modules-in-rspec
