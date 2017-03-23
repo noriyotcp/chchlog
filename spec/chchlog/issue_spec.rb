@@ -1,6 +1,16 @@
 require 'spec_helper'
 
 RSpec.describe Chchlog::Issue do
+  before(:suite) do
+    root_dir = %x( git rev-parse --show-toplevel).strip
+    target_dir = root_dir + "/spec/chchlog_test_repo/"
+    Dir.chdir target_dir
+  end
+
+  after(:suite) do
+    Dir.chdir root_dir
+  end
+
   # NOTE: the following line may be used in other files
   # pull_num = %x( \git log --merges --oneline --reverse --ancestry-path #{hash}...HEAD | grep 'Merge pull request #' | grep -oE '#[[:digit:]]+' | head -n1 | cut -b 2- )
 
@@ -8,9 +18,6 @@ RSpec.describe Chchlog::Issue do
   # http://stackoverflow.com/questions/1542945/testing-modules-in-rspec#comment68421749_10802518
   # http://qiita.com/tq_jappy/items/ed56b0f4a20500252461
   let(:chchlog_issue) { Class.new { extend Chchlog::Issue } }
-
-  target_dir = %x( git rev-parse --show-toplevel).strip + "/spec/chchlog_test_repo/"
-  Dir.chdir target_dir
 
   # e.g. git@github.com:noriyotcp/chchlog_test_repo.git
   owner_and_repo_source = %x( git remote get-url --push origin )
@@ -27,4 +34,5 @@ RSpec.describe Chchlog::Issue do
     issue = chchlog_issue.generate(pull_num, pull_url)
     expect(issue).to eq "[##{pull_num}](#{pull_url})"
   end
+
 end
