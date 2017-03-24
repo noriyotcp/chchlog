@@ -2,6 +2,7 @@ require "chchlog/issue"
 require "chchlog/change"
 require "chchlog/change_group"
 require "chchlog/versioning"
+require "chchlog/change_log"
 require "chchlog/version"
 
 module Chchlog
