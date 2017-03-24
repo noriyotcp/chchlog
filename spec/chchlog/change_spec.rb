@@ -6,16 +6,16 @@ RSpec.describe Chchlog::Change do
 
   context "when it doesn't have an issue" do
     it 'returns a text representing the receiver as a body' do
-      change = chchlog_change.generate_body('change')
-      expect(change).to eq "  * change"
+      change = chchlog_change.generate('change', nil)
+      expect('  ' + change.to_s).to eq "  * change"
     end
   end
 
   context "when it has an issue" do
     it 'returns a text representing the receiver as a subject' do
       issue = chchlog_issue.generate(1, 'https://github.com/noriyotcp/chchlog/pull/1')
-      change = chchlog_change.generate_subject('change', issue)
-      expect(change).to eq "* change [#1](https://github.com/noriyotcp/chchlog/pull/1)"
+      change = chchlog_change.generate('change', issue)
+      expect(change.to_s).to eq "* change [#1](https://github.com/noriyotcp/chchlog/pull/1)"
     end
   end
 end
