@@ -1,16 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe Chchlog::ChangeGroup do
-  before(:suite) do
-    root_dir = %x( git rev-parse --show-toplevel).strip
-    target_dir = root_dir + "/spec/chchlog_test_repo/"
-    Dir.chdir target_dir
-  end
-
-  after(:suite) do
-    Dir.chdir root_dir
-  end
-
   let(:chchlog_change) { Class.new { extend Chchlog::Change } }
   let(:chchlog_change_group) { Class.new { extend Chchlog::ChangeGroup } }
 
