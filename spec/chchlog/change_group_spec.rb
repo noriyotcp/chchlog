@@ -10,8 +10,8 @@ RSpec.describe Chchlog::ChangeGroup do
 
     let(:changes) do
       [
-        chchlog_change.generate_subject('subject', issue),
-        chchlog_change.generate_body('body')
+        chchlog_change.generate('with_issue', issue),
+        chchlog_change.generate('without_issue', nil)
       ]
     end
 
@@ -22,10 +22,10 @@ RSpec.describe Chchlog::ChangeGroup do
     it 'returns a text representing the receiver' do
       text = <<~EOS.chomp
         ### Group1
-        * subject [#1](https://github.com/noriyotcp/chchlog/pull/1)
-          * body
+        * with_issue [#1](https://github.com/noriyotcp/chchlog/pull/1)
+        * without_issue
       EOS
-      expect(change_group).to eq text
+      expect(change_group.to_s).to eq text
     end
   end
 end
