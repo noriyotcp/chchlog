@@ -1,9 +1,9 @@
-require "chchlog/issue"
-require "chchlog/change"
-require "chchlog/change_group"
-require "chchlog/versioning"
-require "chchlog/change_log"
-require "chchlog/version"
+require 'chchlog/issue'
+require 'chchlog/change'
+require 'chchlog/change_group'
+require 'chchlog/versioning'
+require 'chchlog/change_log'
+require 'chchlog/version'
 
 module Chchlog
   # TODO: It's just a dummy method!
