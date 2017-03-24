@@ -8,6 +8,6 @@ RSpec.describe Chchlog::Issue do
 
   it 'returns a text representing the receiver' do
     issue = chchlog_issue.generate(1, 'https://github.com/noriyotcp/chchlog/pull/1')
-    expect(issue.to_s).to eq "[#1](https://github.com/noriyotcp/chchlog/pull/1)"
+    expect(issue.to_s).to eq '[#1](https://github.com/noriyotcp/chchlog/pull/1)'
   end
 end
