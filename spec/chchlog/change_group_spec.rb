@@ -5,13 +5,6 @@ RSpec.describe Chchlog::ChangeGroup do
   let(:chchlog_change) { Class.new { extend Chchlog::Change } }
   let(:chchlog_change_group) { Class.new { extend Chchlog::ChangeGroup } }
 
-  xcontext "when it doesn't have an issue" do
-    it 'returns a text representing the receiver' do
-      change = chchlog_change.generate('change', nil)
-      expect(change).to eq "* change"
-    end
-  end
-
   context "when it has an issue" do
     let(:issue) { chchlog_issue.generate(1, 'https://github.com/noriyotcp/chchlog/pull/1') }
 
