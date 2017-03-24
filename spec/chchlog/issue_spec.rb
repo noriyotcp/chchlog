@@ -7,7 +7,7 @@ RSpec.describe Chchlog::Issue do
   let(:chchlog_issue) { Class.new { extend Chchlog::Issue } }
 
   it 'returns a text representing the receiver' do
-    issue = chchlog_issue.generate(1, 'https://github.com/noriyotcp/chchlog/1')
-    expect(issue).to eq "[#1](https://github.com/noriyotcp/chchlog/1)"
+    issue = chchlog_issue.generate(1, 'https://github.com/noriyotcp/chchlog/pull/1')
+    expect(issue).to eq "[#1](https://github.com/noriyotcp/chchlog/pull/1)"
   end
 end
