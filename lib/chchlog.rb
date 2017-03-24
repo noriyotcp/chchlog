@@ -1,4 +1,5 @@
 require "chchlog/issue"
+require "chchlog/change"
 require "chchlog/version"
 
 module Chchlog
