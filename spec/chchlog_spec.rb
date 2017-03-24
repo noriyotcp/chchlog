@@ -12,7 +12,7 @@ RSpec.describe Chchlog do
   #   Dir.chdir root_dir
   # end
 
-  xit 'has a version number' do
+  it 'has a version number' do
     expect(Chchlog::VERSION).not_to be nil
   end
 
