@@ -3,7 +3,11 @@ require 'nty_change_log'
 module Chchlog
   module Versioning
     def generate(name, change_groups)
-      NTYChangeLog::Version.new(name, change_groups)
+      return <<~EOS
+        ## #{name}
+
+        #{change_groups.join("\n")}
+      EOS
     end
   end
 end
