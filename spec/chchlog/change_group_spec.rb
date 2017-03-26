@@ -20,7 +20,7 @@ RSpec.describe Chchlog::ChangeGroup do
     }
 
     it 'returns a text representing the receiver' do
-      text = <<~EOS.chomp
+      text = <<~EOS
         ### Group1
         * with_issue [#1](https://github.com/noriyotcp/chchlog/pull/1)
         * without_issue

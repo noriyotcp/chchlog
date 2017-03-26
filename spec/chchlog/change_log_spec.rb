@@ -31,7 +31,7 @@ RSpec.describe Chchlog::ChangeLog do
     let(:change_log) { chchlog_change_log.generate(versions) }
 
     it 'returns a text representing the receiver' do
-      text = <<~EOS.chomp
+      text = <<~EOS
         # Change Log
 
         ## Unreleased
@@ -43,6 +43,7 @@ RSpec.describe Chchlog::ChangeLog do
 
         ### Group2
         * changes2
+
       EOS
       expect(change_log.to_s).to eq text
     end

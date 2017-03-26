@@ -34,7 +34,7 @@ RSpec.describe Chchlog::Versioning do
     let(:versioning) { chchlog_versioning.generate('1.0.0', change_groups) }
 
     it 'returns a text representing the receiver' do
-      text = <<~EOS.chomp
+      text = <<~EOS
         ## 1.0.0
 
         ### Group1
@@ -43,6 +43,7 @@ RSpec.describe Chchlog::Versioning do
 
         ### Group2
         * with_issue [#1](https://github.com/noriyotcp/chchlog/pull/1)
+
       EOS
       expect(versioning.to_s).to eq text
     end
