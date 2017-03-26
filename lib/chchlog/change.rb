@@ -1,5 +1,3 @@
-require 'nty_change_log'
-
 module Chchlog
   module Change
     def generate(commit_message, issue)

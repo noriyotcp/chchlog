@@ -1,5 +1,3 @@
-require 'nty_change_log'
-
 module Chchlog
   module ChangeLog
     def generate(versions)
